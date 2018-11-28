@@ -3,18 +3,17 @@
   Statistics
   <ul>
     <li>Average TV Special Run Time</li>
-      <h3>@average_special_run_time</h3>
+    <h3><%= @average_special_run_time %></h3>
     <li>Total TV Specials</li>
-      <h3>@total_specials</h3>
+    <h3><%= @total_specials %></h3>
     <li>Average Age</li>
-      <h3>@average_age</h3>
-    <li class="cities">Cities</li>
-      @cities.each do |city|
-        <p class=""
+    <h3><%= @average_age %></h3>
+    <li class="header cities">Cities</li>
+    @cities.each do |city|
+    <p class="<% @city_list %>"
   </ul>
-
   @comedians.each do |comedian|
-  <div id="comedian - <%= song.id %>" class="song">
+    <div id="comedian - <%= comedian.id %>">
     <ul>
       <li>Age:</li>
       <li>City:</li>
