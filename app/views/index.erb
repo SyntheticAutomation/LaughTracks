@@ -1,22 +1,9 @@
-<h1>Comedians</h1>
-<header>
-  Statistics
-  <ul>
-    <li>Average TV Special Run Time</li>
-    <h3><%= @average_special_run_time %></h3>
-    <li>Total TV Specials</li>
-    <h3><%= @total_specials %></h3>
-    <li>Average Age</li>
-    <h3><%= @average_age %></h3>
-    <li class="header cities">Cities</li>
-    @cities.each do |city|
-    <p class="<% @city_list %>"
-  </ul>
-  @comedians.each do |comedian|
-    <div id="comedian - <%= comedian.id %>">
-    <ul>
-      <li>Age:</li>
-      <li>City:</li>
-      <li>Total Specials:</li>
-    </ul>
-</header>
+<h1>All Comedians</h1>
+
+<div id="comedians">
+  <% @comedians.each do |comedian| %>
+  <h3><%= comedian.name %></h3>
+  <p><%= comedian.age %></p>
+  <p><%= comedian.city %></p>
+  <% end %>
+</div>
