@@ -1,16 +1,16 @@
   <head>
     <title>Comedians</title>
-    <link rel="stylesheet" type="text/css" href="public/reset.css">
-    <link rel="stylesheet" type="text/css" href="public/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
   </head>
 
   <body>
-    <div id="comedian_list">
       <% @comedians.each do |comedian| %>
+      <div id="comedian-<%= comedian.id %>">
         <h2><%= comedian.name %></h2>
         <p>Age: <%= comedian.age %></p>
         <p>Birthplace: <%= comedian.city %></p>
+      </div>
       <% end %>
-    </div>
   </body>
