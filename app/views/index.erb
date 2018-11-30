@@ -28,9 +28,9 @@
                 Birthplace: <%= comedian.city %>
                 <% comedian.specials.each do |special| %>
                   <p id="comic-special-<%= special.id %>" class="special-title">
+                    <img src=<%= special.image %> width="20%" align="left"/><br>
                     <%= special.title %><br>
                     Runtime: <%= special.runtime %> min
-                    <img src=<%= special.image %> width="20%"/>
                   </p>
                 <% end %>
             </div>
