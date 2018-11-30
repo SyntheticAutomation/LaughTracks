@@ -19,7 +19,7 @@ RSpec.describe Comedian do
   end
   describe 'Class Methods' do
     describe '.average_age' do
-      it 'returns mean age of all comedians'
+      it 'returns mean age of all comedians' do
         comic_1 = Comedian.create(name: "Mitch Hedberg", age: 48, city: "San Francisco")
         comic_2 = Comedian.create(name: "Paul Mooney", age: 77, city: "Shreveport")
         comic_3 = Comedian.create(name: "Rodney Dangerfield", age: 82, city: "Deer Park")
@@ -27,4 +27,5 @@ RSpec.describe Comedian do
         expect(Comedian.average_age).to eq(69)
       end
     end
+  end
 end
