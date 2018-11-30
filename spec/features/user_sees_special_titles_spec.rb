@@ -13,8 +13,6 @@ RSpec.describe 'A visitor to our app' do
 
     within("#comic-special-#{special.id}") do
       expect(page).to have_content(special.runtime)
-    end
-    within("#special-image") do
       expect(page).to have_xpath("//img[@src='#{special.image}']")
     end
   end
