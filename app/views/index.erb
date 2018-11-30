@@ -27,7 +27,12 @@
                 Age: <%= comedian.age %><br>
                 Birthplace: <%= comedian.city %>
                 <% comedian.specials.each do |special| %>
-                  <p class="comic-card-special-title"><%= special.title %></p>
+                  <p id="comic-special-<%= special.id %>" class="special-title">
+                    <%= special.title %>
+                    <%= special.runtime %>
+                    <div class="special_image">
+                      <img src=<%= special.image %> width="25%"/>
+                    </div>
                 <% end %>
             </div>
           </div>
