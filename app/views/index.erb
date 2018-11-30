@@ -19,18 +19,16 @@
     <div class="container">
       <div class="row">
         <% @comedians.each do |comedian| %>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <div class="card bg-light mb-3" style="max-width: 18rem;">
             <div class="card-body">
               <div id="comedian-<%= comedian.id %>" class="card-title"><h5><%= comedian.name %></h5></div>
               <p class="card-text">
                 Age: <%= comedian.age %><br>
                 Birthplace: <%= comedian.city %>
-                <ul>
-                  <% comedian.specials.each do |special| %>
-                    <li><%= special.title %></li>
-                  <% end %>
-                </ul>
+                <% comedian.specials.each do |special| %>
+                  <p class="comic-card-special-title"><%= special.title %></p>
+                <% end %>
               </p>
             </div>
           </div>
