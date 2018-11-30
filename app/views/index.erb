@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <% @comedians.each do |comedian| %>
-        <div class="col-sm-4">
+        <div class="col-sm-4 d-flex">
           <div class="card bg-light mb-3" style="max-width: 18rem;">
             <div class="card-body">
               <div id="comedian-<%= comedian.id %>" class="card-title"><h5><%= comedian.name %></h5></div>
@@ -27,7 +27,11 @@
                 Age: <%= comedian.age %><br>
                 Birthplace: <%= comedian.city %>
                 <% comedian.specials.each do |special| %>
-                  <p class="comic-card-special-title"><%= special.title %></p>
+                  <p id="comic-special-<%= special.id %>" class="special-title">
+                    <img src=<%= special.image %> width="20%" align="left"/><br>
+                    <%= special.title %><br>
+                    Runtime: <%= special.runtime %> min
+                  </p>
                 <% end %>
             </div>
           </div>
