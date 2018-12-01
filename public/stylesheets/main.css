@@ -27,18 +27,18 @@
   border: 3px solid black;
   margin-bottom: 15px;
 }
-.three-stats {
-  width: 30%;
+.four-stats {
+  width: 20%;
   display: inline-block;
   vertical-align: top;
   margin: 0 -18px;
 }
-.three-stats img{
+.four-stats img{
   border-radius: 50%;
   border: 3px solid black;
-  height: 100px;
-  width: 100px;
-  margin: 25px 0;
+  height: 75px;
+  width: 75px;
+  margin: 5px 0;
 }
 .parallax {
   background-image: url("https://www.sweetwater.com/insync/media/2013/05/live-sound-microphone.jpg");
