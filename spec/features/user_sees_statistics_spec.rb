@@ -26,14 +26,12 @@ RSpec.describe 'A visitor to our app' do
 
     visit '/comedians?age=48'
     within("#statistics") do
-      expect(page).to have_content("Average Comedian Age:\n#{Comedian.first.age}") #rather have this as @comedians.average_age
-      expect(page).to have_content("Number of Specials:\n#{Comedian.first.specials.count}") #rather have this as @specials.count or Special.count
-      expect(page).to have_content("Average Special Length:\n#{Comedian.first.specials.average_runtime}") #rather have this as @specials.average_runtime
-      expect(page).to have_content("Cities:\nSan Francisco") #-----why do i have to call Comedian.first, why does Comedian return both, and why does @comedians not work?
+      expect(page).to have_content("Average Comedian Age:\n#{Comedian.first.age}")
+      expect(page).to have_content("Number of Specials:\n#{Comedian.first.specials.count}")
+      expect(page).to have_content("Average Special Length:\n#{Comedian.first.specials.average_runtime}")
       expect(page).to have_no_content("Average Comedian Age:\n50")
       expect(page).to have_no_content("Number of Specials: 4")
       expect(page).to have_no_content("Brooklyn")
-      #is this communicating with controller at all? there is an age parameter so @comedians should be accessible. do i need to require the controller file at the top here?
     end
   end
 end
