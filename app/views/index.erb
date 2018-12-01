@@ -15,14 +15,34 @@
         </blockquote>
     	</div>
     </div>
-    <section id="statistics" class="statistics">
+
+    <section class="statistics" id="statistics">
       <h1>Statistics</h1>
-      <ul class="list-inline">
-        <li class="list-inline-item">Average Age: <%= Comedian.average_age %></li>
-        <li class="list-inline-item">Average Special Length: <%= Special.average_runtime %> min</li>
-        <li class="list-inline-item">Cities: <% @comedians.each do |comedian| %><%= comedian.city %><% end.uniq %></li>
-      </ul>
+      <article class="three-stats">
+        <img src="https://bit.ly/2Sh71fs">
+        <h5>Average Age:</h5>
+        <p><%= Comedian.average_age %></p>
+      </article>
+      <article class="three-stats">
+        <img src="https://bit.ly/2BJjOlr">
+        <h5>Average Special Length:</h5>
+        <p><%= Special.average_runtime %></p>
+      </article>
+      <article class="three-stats">
+        <img src="https://bit.ly/2zyhJY5">
+        <h5>Cities:</h5>
+        <p>
+          <% cities = [] %>
+          <% @comedians.each do |comedian| %>
+            <% cities << comedian.city %>
+          <% end %>
+          <% 3.times do %>
+           <%= cities.shuffle!.shift %>
+          <% end %>
+        </p>
+      </article>
     </section>
+
     <div class="container">
       <div class="row">
         <% @comedians.each do |comedian| %>
