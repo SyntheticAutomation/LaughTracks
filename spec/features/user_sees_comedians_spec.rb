@@ -8,7 +8,6 @@ RSpec.describe 'A visitor to our app' do
     expect(page).to have_content(comedian.age)
     expect(page).to have_content(comedian.city)
   end
-
   it 'should display comedian info in the correct place' do
     comedian = Comedian.create(name: "Adam Sandler", age: 52, city: "Brooklyn" )
     special = comedian.specials.create(title: "Adam Sandler: Take Me Away From Here", runtime: 120, image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/08/01/16/sandler-3.jpg" )
@@ -26,7 +25,7 @@ RSpec.describe 'A visitor to our app' do
     special_2 = comic_2.specials.create(title: "Paul Mooney: Help Is Not Coming", runtime: 60, image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/08/01/16/sandler-3.jpg" )
     special_3 = comic_3.specials.create(title: "Rodney Dangerfield: A Field of Danger", runtime: 120, image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/08/01/16/sandler-3.jpg" )
 
-    visit '/comedians?age=34'
+    visit '/comedians?age=77'
 
     expect(page).to have_content(comic_2.name)
     expect(page).to have_no_content(comic_1.name)
