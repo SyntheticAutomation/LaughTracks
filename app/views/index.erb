@@ -23,7 +23,7 @@
         <h5>Average Comedian Age:</h5>
         <p><%= Comedian.average_age %></p>
       </article>
-      <article class="four-stats">
+      <article class="four-stats" id="special-count">
         <img src="https://bit.ly/2BKFjSY">
         <h5>Number of Specials:</h5>
         <p><%= Special.count %></p>
@@ -36,14 +36,13 @@
       <article class="four-stats">
         <img src="https://bit.ly/2zyhJY5">
         <h5>Cities:</h5>
-        <p>
+        <p><marquee>
           <% cities = [] %>
           <% @comedians.each do |comedian| %>
             <% cities << comedian.city %>
           <% end %>
-          <% 3.times do %>
-           <%= cities.shuffle!.shift %>
-          <% end %>
+           <%= cities.join("...") %>
+          </marquee>
         </p>
       </article>
     </section>

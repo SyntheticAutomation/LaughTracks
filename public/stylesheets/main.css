@@ -27,6 +27,9 @@
   border: 3px solid black;
   margin-bottom: 15px;
 }
+.statistics marquee {
+  width: 150px;
+}
 .four-stats {
   width: 20%;
   display: inline-block;
