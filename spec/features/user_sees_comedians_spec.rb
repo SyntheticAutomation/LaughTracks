@@ -39,6 +39,6 @@ RSpec.describe 'A visitor to our app' do
 
     visit '/comedians'
 
-    expect(page).to have_content(comic_1.total_specials)
+    expect(page).to have_content(comic_1.specials_count)
   end
 end
