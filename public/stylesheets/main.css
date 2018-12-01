@@ -1,11 +1,3 @@
-.parallax {
-  background-image: url("https://www.sweetwater.com/insync/media/2013/05/live-sound-microphone.jpg");
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .card {
   width: 100%;
   opacity: 0.85;
@@ -26,4 +18,33 @@
   float: left;
   clear: left;
   margin-bottom: 15px;
+}
+.statistics {
+  background-color: #e8ecef;
+  text-align: center;
+  opacity: 0.9;
+  border-radius: 10%;
+  border: 3px solid black;
+  margin-bottom: 15px;
+}
+.three-stats {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 -18px;
+}
+.three-stats img{
+  border-radius: 50%;
+  border: 3px solid black;
+  height: 100px;
+  width: 100px;
+  margin: 25px 0;
+}
+.parallax {
+  background-image: url("https://www.sweetwater.com/insync/media/2013/05/live-sound-microphone.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
