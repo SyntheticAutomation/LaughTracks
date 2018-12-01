@@ -38,7 +38,7 @@ RSpec.describe 'A visitor to our app' do
     special_3 = comic_1.specials.create(title: "Mitch Hedberg: Special 3", runtime: 48, image: "https://i.ytimg.com/vi/Uk0mJSTatbw/maxresdefault.jpg" )
 
     visit '/comedians'
-
-    expect(page).to have_content(comic_1.specials_count)
+    save_and_open_page
+    expect(page).to have_content("Total Specials: #{comic_1.specials.count}")
   end
 end
