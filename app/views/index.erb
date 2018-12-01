@@ -18,27 +18,31 @@
 
     <section class="statistics" id="statistics">
       <h1>Statistics</h1>
-      <article class="three-stats">
-        <img src="https://bit.ly/2Sh71fs">
-        <h5>Average Age:</h5>
+      <article class="four-stats">
+        <img src="https://bit.ly/2wyDox1">
+        <h5>Average Comedian Age:</h5>
         <p><%= Comedian.average_age %></p>
       </article>
-      <article class="three-stats">
+      <article class="four-stats" id="special-count">
+        <img src="https://bit.ly/2BKFjSY">
+        <h5>Number of Specials:</h5>
+        <p><%= Special.count %></p>
+      </article>
+      <article class="four-stats">
         <img src="https://bit.ly/2BJjOlr">
         <h5>Average Special Length:</h5>
         <p><%= Special.average_runtime %></p>
       </article>
-      <article class="three-stats">
+      <article class="four-stats">
         <img src="https://bit.ly/2zyhJY5">
         <h5>Cities:</h5>
-        <p>
+        <p><marquee>
           <% cities = [] %>
           <% @comedians.each do |comedian| %>
             <% cities << comedian.city %>
           <% end %>
-          <% 3.times do %>
-           <%= cities.shuffle!.shift %>
-          <% end %>
+           <%= cities.join("...") %>
+          </marquee>
         </p>
       </article>
     </section>
@@ -52,7 +56,8 @@
               <div id="comedian-<%= comedian.id %>" class="card-title"><h5><%= comedian.name %></h5></div>
               <p class="card-text">
                 Age: <%= comedian.age %><br>
-                Birthplace: <%= comedian.city %>
+                Birthplace: <%= comedian.city %><br>
+                Total Specials: <%= comedian.specials.count %>
                 <% comedian.specials.each do |special| %>
                   <p id="comic-special-<%= special.id %>" class="special-title">
                     <img src=<%= special.image %> width="20%" align="left"/><br>

@@ -31,4 +31,13 @@ RSpec.describe 'A visitor to our app' do
     expect(page).to have_no_content(comic_1.name)
     expect(page).to have_no_content(comic_3.name)
   end
+  it 'should display total special count for each comedian' do
+    comic_1 = Comedian.create(name: "Mitch Hedberg", age: 48, city: "San Francisco")
+    special_1 = comic_1.specials.create(title: "Mitch Hedberg: Special 1", runtime: 120, image: "https://i.ytimg.com/vi/Uk0mJSTatbw/maxresdefault.jpg" )
+    special_2 = comic_1.specials.create(title: "Mitch Hedberg: Special 2", runtime: 60, image: "https://i.ytimg.com/vi/Uk0mJSTatbw/maxresdefault.jpg" )
+    special_3 = comic_1.specials.create(title: "Mitch Hedberg: Special 3", runtime: 48, image: "https://i.ytimg.com/vi/Uk0mJSTatbw/maxresdefault.jpg" )
+
+    visit '/comedians'
+    expect(page).to have_content("Total Specials: #{comic_1.specials.count}")
+  end
 end
