@@ -10,7 +10,7 @@ RSpec.describe 'A visitor to our app' do
       expect(page).to have_content(Comedian.average_age)
       expect(page).to have_content(Special.average_runtime)
       expect(page).to have_content("Brooklyn")
-      expect(page).to have_content(Special.total)
+      expect(page).to have_content("Total Specials: #{Special.count}")
 
     end
   end
