@@ -5,7 +5,7 @@ class LaughTracksApp < Sinatra::Base
   end
 
   get '/comedians' do
-    if params[:age]
+    if params[:age] && Comedian.find_by(age: params[:age])
       @comedians = Comedian.where(age: params[:age])
       all_ids = @comedians.each {|comedian| comedian.id}
       @specials = Special.where(comedian_id: all_ids)
@@ -16,6 +16,13 @@ class LaughTracksApp < Sinatra::Base
     erb :"index"
   end
 
+  get '/comedians/new' do
+    erb :"new"
+  end
 
+  post '/comedians' do
+    comedian = Comedian.create(params[:comedian])
+    redirect '/comedians'
+  end
 
 end

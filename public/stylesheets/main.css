@@ -51,3 +51,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+#new-comedian-form {
+  margin-top: 50px;
+}
+#new-comedian-page {
+  background-image: url("https://bit.ly/2Sm8TDz");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-group {
+  width: 30%;
+  margin: auto;
+}
